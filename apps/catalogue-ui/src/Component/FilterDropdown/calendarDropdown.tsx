@@ -47,6 +47,30 @@ const CalendarDropdown: React.FC = () => {
                       </button>
                     )}
                   </Menu.Item>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <button
+                        onClick={() => setSelectedOption('Last year')}
+                        className={`${
+                          active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
+                        } group flex items-center w-full px-4 py-2 text-sm`}
+                      >
+                        Last year
+                      </button>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <button
+                        onClick={() => setSelectedOption('All time')}
+                        className={`${
+                          active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
+                        } group flex items-center w-full px-4 py-2 text-sm`}
+                      >
+                        All time
+                      </button>
+                    )}
+                  </Menu.Item>
                 </div>
               </Menu.Items>
             )}
