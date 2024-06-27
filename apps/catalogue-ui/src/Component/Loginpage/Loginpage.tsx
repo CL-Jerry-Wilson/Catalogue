@@ -194,7 +194,7 @@ class Loginpage extends Component<LoginpageProps, LoginpageState> {
   render() {
     return (
       <div
-        className="h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat relative"
+        className="h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${loginImage})`,
           backgroundSize: 'cover',
@@ -205,32 +205,33 @@ class Loginpage extends Component<LoginpageProps, LoginpageState> {
         }}
       >
         {/* Header with logo */}
-        <header className="absolute top-0 left-0 w-full p-0 m-0">
+        <header className="absolute top-5 left-5 w-full p-0 m-0">
           <img src={logo} alt="Cirrus Labs Logo" className="h-16 mb-2 ml-4" />
           <hr className="absolute left-0 right-0 border-brown-600 border-t-3 m-0 p-0" />
         </header>
 
-        <div className="absolute inset-0 flex items-center justify-start pl-16">
-          <div className="">
-            <h1 className="text-6xl font-normal mb-4">Project Catalogue</h1>
-            <p className="mb-6 ml-3 text-2xl">The one stop integrated platform for all the POC's across CirrusLabs</p>
-            {this.state.isAuthenticated ? (
-              <button
-                onClick={this.logout}
-                className="bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out"
-              >
-                Log out
-              </button>
-            ) : (
-              <button
-                onClick={this.login}
-                className="text-2l w-70 ml-3 bg-red-600 hover:bg-red-800 text-white font-bold py-3 px-10 rounded-lg shadow-md transition duration-300 ease-in-out"
-              >
-                Login
-              </button>
-            )}
-          </div>
-        </div>
+        <div className="absolute inset-0 flex items-center">
+  <div className="text-left text-white ml-16">
+    <h1 className="text-6xl font-normal mb-4">Project Catalogue</h1>
+    <p className="mb-6 text-2xl text-gray-800 ml-3">The one-stop integrated platform for all the POCs across CirrusLabs</p>
+    {this.state.isAuthenticated ? (
+      <button
+        onClick={this.logout}
+        className="bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out"
+      >
+        Log out
+      </button>
+    ) : (
+      <button
+        onClick={this.login}
+        className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-10 rounded-lg shadow-md transition duration-300 ease-in-out ml-3"
+      >
+        Log in
+      </button>
+    )}
+  </div>
+</div>
+
       </div>
     );
   }
@@ -242,4 +243,3 @@ function LoginpageWithNavigate(props: any) {
 }
 
 export default LoginpageWithNavigate;
-
