@@ -20,10 +20,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '20'
+          node-version: '20' 
 
-      - name: Set npm config
-        run: npm config set max_old_space_size=4096
+      - name: Increase Node.js memory limit
+        run: |
+          echo "export NODE_OPTIONS=--max-old-space-size=4096" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: npm install
