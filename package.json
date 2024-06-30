@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start:frontend": "nx serve catalogue-ui",
-    "start:backend": "nx serve catalogue-backend"
+    "start:backend": "nx serve catalogue-backend",
     "test": "jest"
   },
   "private": true,
