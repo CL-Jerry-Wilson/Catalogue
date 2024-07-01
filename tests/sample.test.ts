@@ -1,4 +1,4 @@
-// tests/sample.test.js
+// tests/sample.test.ts
 test('sample test', () => {
   expect(1 + 1).toBe(2);
 });
