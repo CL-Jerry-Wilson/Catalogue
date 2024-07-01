@@ -5,7 +5,7 @@
   "scripts": {
     "start:frontend": "nx serve catalogue-ui",
     "start:backend": "nx serve catalogue-backend",
-    "test": "echo \"Success: always passed test verified\" && exit 0"
+    "test": "jest"
   },
   "private": true,
   "dependencies": {
