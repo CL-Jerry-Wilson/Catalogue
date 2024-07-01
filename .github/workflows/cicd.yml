@@ -3,10 +3,10 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - cicd-guardrails  # Trigger on push to main branch
+      - main
   pull_request:
     branches:
-      - cicd-guardrails  # Trigger on pull requests to main branch
+      - main
 
 jobs:
   build-and-test:
@@ -16,11 +16,16 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # Specify a stable Node.js version
+
     - name: Install dependencies
-      run: npm install
+      run: npm ci  # Use npm ci for a clean install
 
     - name: Run tests
-      run: npm test --verbose
+      run: npx jest --config jest.config.ts
 
   deploy:
     needs: build-and-test
@@ -31,8 +36,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Deploy to Production
+    - name: Placeholder Deployment
       run: |
         echo "Deploying to production environment..."
-        # Placeholder for actual deployment commands
-        echo "This deployment successful!"
+        echo "This is a placeholder deployment step."
+        echo "Deployment successful!"
